@@ -7,14 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DFEABC17273698B400519C33 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEABC16273698B400519C33 /* AppDelegate.swift */; };
-		DFEABC19273698B400519C33 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEABC18273698B400519C33 /* SceneDelegate.swift */; };
-		DFEABC1B273698B400519C33 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEABC1A273698B400519C33 /* ViewController.swift */; };
-		DFEABC1E273698B400519C33 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFEABC1C273698B400519C33 /* Main.storyboard */; };
-		DFEABC20273698BE00519C33 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFEABC1F273698BE00519C33 /* Assets.xcassets */; };
-		DFEABC23273698BE00519C33 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFEABC21273698BE00519C33 /* LaunchScreen.storyboard */; };
 		DFEABC2E273698BF00519C33 /* EssentialFeedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEABC2D273698BF00519C33 /* EssentialFeedTests.swift */; };
-		DFEABC39273698BF00519C33 /* EssentialFeedUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEABC38273698BF00519C33 /* EssentialFeedUITests.swift */; };
+		DFEABC5727369DC300519C33 /* FeedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEABC5627369DC300519C33 /* FeedItem.swift */; };
+		DFEABC5C27369DD400519C33 /* FeedLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEABC5B27369DD400519C33 /* FeedLoader.swift */; };
+		DFEABC6A27369F1400519C33 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEABC6927369F1400519C33 /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,19 +32,14 @@
 
 /* Begin PBXFileReference section */
 		DFEABC13273698B400519C33 /* EssentialFeed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EssentialFeed.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		DFEABC16273698B400519C33 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DFEABC18273698B400519C33 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		DFEABC1A273698B400519C33 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		DFEABC1D273698B400519C33 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		DFEABC1F273698BE00519C33 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		DFEABC22273698BE00519C33 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DFEABC24273698BE00519C33 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DFEABC29273698BF00519C33 /* EssentialFeedTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EssentialFeedTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFEABC2D273698BF00519C33 /* EssentialFeedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EssentialFeedTests.swift; sourceTree = "<group>"; };
 		DFEABC2F273698BF00519C33 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DFEABC34273698BF00519C33 /* EssentialFeedUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EssentialFeedUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DFEABC38273698BF00519C33 /* EssentialFeedUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EssentialFeedUITests.swift; sourceTree = "<group>"; };
-		DFEABC3A273698BF00519C33 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DFEABC5627369DC300519C33 /* FeedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItem.swift; sourceTree = "<group>"; };
+		DFEABC5B27369DD400519C33 /* FeedLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedLoader.swift; sourceTree = "<group>"; };
+		DFEABC6927369F1400519C33 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,7 +72,6 @@
 			children = (
 				DFEABC15273698B400519C33 /* EssentialFeed */,
 				DFEABC2C273698BF00519C33 /* EssentialFeedTests */,
-				DFEABC37273698BF00519C33 /* EssentialFeedUITests */,
 				DFEABC14273698B400519C33 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -99,13 +89,9 @@
 		DFEABC15273698B400519C33 /* EssentialFeed */ = {
 			isa = PBXGroup;
 			children = (
-				DFEABC16273698B400519C33 /* AppDelegate.swift */,
-				DFEABC18273698B400519C33 /* SceneDelegate.swift */,
-				DFEABC1A273698B400519C33 /* ViewController.swift */,
-				DFEABC1C273698B400519C33 /* Main.storyboard */,
-				DFEABC1F273698BE00519C33 /* Assets.xcassets */,
-				DFEABC21273698BE00519C33 /* LaunchScreen.storyboard */,
+				DFEABC6927369F1400519C33 /* AppDelegate.swift */,
 				DFEABC24273698BE00519C33 /* Info.plist */,
+				DFEABC5527369D8E00519C33 /* Feed Feature */,
 			);
 			path = EssentialFeed;
 			sourceTree = "<group>";
@@ -119,13 +105,13 @@
 			path = EssentialFeedTests;
 			sourceTree = "<group>";
 		};
-		DFEABC37273698BF00519C33 /* EssentialFeedUITests */ = {
+		DFEABC5527369D8E00519C33 /* Feed Feature */ = {
 			isa = PBXGroup;
 			children = (
-				DFEABC38273698BF00519C33 /* EssentialFeedUITests.swift */,
-				DFEABC3A273698BF00519C33 /* Info.plist */,
+				DFEABC5627369DC300519C33 /* FeedItem.swift */,
+				DFEABC5B27369DD400519C33 /* FeedLoader.swift */,
 			);
-			path = EssentialFeedUITests;
+			path = "Feed Feature";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -195,6 +181,7 @@
 				TargetAttributes = {
 					DFEABC12273698B400519C33 = {
 						CreatedOnToolsVersion = 12.2;
+						LastSwiftMigration = 1220;
 					};
 					DFEABC28273698BF00519C33 = {
 						CreatedOnToolsVersion = 12.2;
@@ -231,9 +218,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DFEABC23273698BE00519C33 /* LaunchScreen.storyboard in Resources */,
-				DFEABC20273698BE00519C33 /* Assets.xcassets in Resources */,
-				DFEABC1E273698B400519C33 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,9 +242,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DFEABC1B273698B400519C33 /* ViewController.swift in Sources */,
-				DFEABC17273698B400519C33 /* AppDelegate.swift in Sources */,
-				DFEABC19273698B400519C33 /* SceneDelegate.swift in Sources */,
+				DFEABC6A27369F1400519C33 /* AppDelegate.swift in Sources */,
+				DFEABC5C27369DD400519C33 /* FeedLoader.swift in Sources */,
+				DFEABC5727369DC300519C33 /* FeedItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,7 +260,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DFEABC39273698BF00519C33 /* EssentialFeedUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,25 +277,6 @@
 			targetProxy = DFEABC35273698BF00519C33 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		DFEABC1C273698B400519C33 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				DFEABC1D273698B400519C33 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		DFEABC21273698BE00519C33 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				DFEABC22273698BE00519C33 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		DFEABC3B273698BF00519C33 /* Debug */ = {
@@ -436,6 +400,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = F476P237J6;
 				INFOPLIST_FILE = EssentialFeed/Info.plist;
@@ -445,6 +410,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = anne.EssentialFeed;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -455,6 +421,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = F476P237J6;
 				INFOPLIST_FILE = EssentialFeed/Info.plist;
