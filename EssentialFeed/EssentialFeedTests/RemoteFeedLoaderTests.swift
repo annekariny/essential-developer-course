@@ -5,7 +5,7 @@
 //  Created by Anne Kariny Silva Freitas on 06/11/21.
 //
 
-@testable import EssentialFeed
+import EssentialFeed
 import XCTest
 
 final class RemoteFeedLoaderTests: XCTestCase {
@@ -13,18 +13,33 @@ final class RemoteFeedLoaderTests: XCTestCase {
 
     func test_init_doesNotRequestDataFromURL() {
         makeSut(url: URL(string: "test-url.com")!)
-        XCTAssertNil(httpClientSpy.getURLRequested)
+
+        XCTAssertTrue(httpClientSpy.requestedURLs.isEmpty)
     }
 
-    func test_load_requestDataFromURL() {
+    func test_load_requestsDataFromURL() {
         let url = URL(string: "test-url.com")!
         let sut = makeSut(url: url)
 
         sut.load()
 
-        XCTAssertTrue(httpClientSpy.getCalled)
-        XCTAssertNotNil(httpClientSpy.getURLRequested)
-        XCTAssertEqual(url, httpClientSpy.getURLRequested)
+        XCTAssertEqual(httpClientSpy.requestURLCallCount, 1)
+
+        XCTAssertFalse(httpClientSpy.requestedURLs.isEmpty)
+        XCTAssertEqual([url], httpClientSpy.requestedURLs)
+    }
+
+    func test_loadTwice_requestsDataFromURLTwice() {
+        let url = URL(string: "test-url.com")!
+        let sut = makeSut(url: url)
+
+        sut.load()
+        sut.load()
+
+        XCTAssertEqual(httpClientSpy.requestURLCallCount, 2)
+
+        XCTAssertFalse(httpClientSpy.requestedURLs.isEmpty)
+        XCTAssertEqual([url, url], httpClientSpy.requestedURLs)
     }
 }
 
@@ -38,12 +53,12 @@ private extension RemoteFeedLoaderTests {
     // MARK: - Doubles/Spies/Mocks
     final class HTTPClientSpy: HTTPClient {
 
-        private(set) var getCalled = false
-        var getURLRequested: URL?
+        private(set) var requestURLCallCount = 0
+        var requestedURLs = [URL]()
 
         func get(from url: URL) {
-            getCalled = true
-            getURLRequested = url
+            requestURLCallCount += 1
+            requestedURLs.append(url)
         }
     }
 }

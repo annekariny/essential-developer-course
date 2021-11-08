@@ -84,6 +84,7 @@
 				DFF81E592737F2CE000C22C0 /* ViewController.swift */,
 				DFEABC24273698BE00519C33 /* Info.plist */,
 				DFEABC5527369D8E00519C33 /* Feed Feature */,
+				DFF81E6727394B37000C22C0 /* Feed API */,
 			);
 			path = EssentialFeed;
 			sourceTree = "<group>";
@@ -92,8 +93,6 @@
 			isa = PBXGroup;
 			children = (
 				DFEABC5627369DC300519C33 /* FeedItem.swift */,
-				DFEABC5B27369DD400519C33 /* FeedLoader.swift */,
-				DFEABC712736A4B300519C33 /* RemoteFeedLoader.swift */,
 			);
 			path = "Feed Feature";
 			sourceTree = "<group>";
@@ -105,6 +104,15 @@
 				DFF81E4D2737F288000C22C0 /* RemoteFeedLoaderTests.swift */,
 			);
 			path = EssentialFeedTests;
+			sourceTree = "<group>";
+		};
+		DFF81E6727394B37000C22C0 /* Feed API */ = {
+			isa = PBXGroup;
+			children = (
+				DFEABC5B27369DD400519C33 /* FeedLoader.swift */,
+				DFEABC712736A4B300519C33 /* RemoteFeedLoader.swift */,
+			);
+			path = "Feed API";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
