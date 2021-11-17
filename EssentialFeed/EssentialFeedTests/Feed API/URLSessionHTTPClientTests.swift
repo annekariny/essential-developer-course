@@ -67,11 +67,11 @@ class URLSessionHTTPClientTests: XCTestCase {
         }
         
         static func startInterceptingRequests() {
-            URLProtocol.registerClass(URLProtocolStub.self)
+            URLProtocol.registerClass(Self.self)
         }
         
         static func stopInterceptingRequests() {
-            URLProtocol.unregisterClass(URLProtocolStub.self)
+            URLProtocol.unregisterClass(Self.self)
             stubs = [:]
         }
         
