@@ -8,13 +8,14 @@
 import EssentialFeed
 import XCTest
 
-class URLSessionHTTPClientTests: XCTestCase {
+final class URLSessionHTTPClientTests: XCTestCase {
     override func setUp() {
         super.setUp()
         URLProtocolStub.startInterceptingRequests()
     }
 
     override func tearDown() {
+        super.tearDown()
         URLProtocolStub.stopInterceptingRequests()
     }
 
@@ -85,7 +86,10 @@ private extension URLSessionHTTPClientTests {
     }
 
     // MARK: Helper Methods
-    func makeSUT(file: StaticString = #file, line: UInt = #line) -> URLSessionHTTPClient {
+    func makeSUT(
+        file: StaticString = #filePath,
+        line: UInt = #line
+    ) -> URLSessionHTTPClient {
         let sut = URLSessionHTTPClient()
         trackForMemoryLeaks(sut, file: file, line: line)
         return sut
@@ -95,7 +99,7 @@ private extension URLSessionHTTPClientTests {
         data: Data?,
         response: URLResponse?,
         error: Error?,
-        file: StaticString = #file,
+        file: StaticString = #filePath,
         line: UInt = #line
     ) -> HTTPClientResult {
         URLProtocolStub.stub(url: anyURL, data: data, response: response, error: error)
@@ -114,11 +118,11 @@ private extension URLSessionHTTPClientTests {
         return receivedResult
     }
 
-    private func resultDataResponseFor(
+    func resultDataResponseFor(
         data: Data?,
         response: URLResponse?,
         error: Error?,
-        file: StaticString = #file,
+        file: StaticString = #filePath,
         line: UInt = #line
     ) -> (
         data: Data,
@@ -135,11 +139,11 @@ private extension URLSessionHTTPClientTests {
             }
         }
 
-    private func resultErrorFor(
+    func resultErrorFor(
         data: Data?,
         response: URLResponse?,
         error: Error?,
-        file: StaticString = #file,
+        file: StaticString = #filePath,
         line: UInt = #line
     ) -> Error? {
         let result = resultFor(data: data, response: response, error: error, file: file, line: line)
@@ -154,8 +158,9 @@ private extension URLSessionHTTPClientTests {
     }
 }
 
+// MARK: - URLProtocolStub
 private extension URLSessionHTTPClientTests {
-    private class URLProtocolStub: URLProtocol {
+    class URLProtocolStub: URLProtocol {
         private static var stub: Stub?
         private static var requestObserver: ((URLRequest) -> Void)?
 
@@ -183,8 +188,6 @@ private extension URLSessionHTTPClientTests {
             requestObserver = nil
         }
 
-
-        // MARK: Abstract class methods
         override class func canInit(with request: URLRequest) -> Bool {
             requestObserver?(request)
             return true
