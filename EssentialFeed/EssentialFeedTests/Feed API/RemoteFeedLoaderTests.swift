@@ -176,12 +176,6 @@ private extension RemoteFeedLoaderTests {
         return try! JSONSerialization.data(withJSONObject: json)
     }
 
-    func trackForMemoryLeaks(_ instance: AnyObject, file: StaticString = #file, line: UInt = #line) {
-        addTeardownBlock { [weak instance] in
-            XCTAssertNil(instance, "Instance should have been deallocated. Potential memory leak.", file: file, line: line)
-        }
-    }
-
     // MARK: - Doubles/Spies/Mocks
     final class HTTPClientSpy: HTTPClient {
         private var messages = [(url: URL, completion: (HTTPClientResult) -> Void)]()
