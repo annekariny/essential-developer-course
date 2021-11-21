@@ -12,27 +12,27 @@
 		<key>EssentialFeed.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>1</integer>
+			<integer>0</integer>
 		</dict>
 		<key>EssentialFeedAPIEndToEndTests.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>0</integer>
+			<integer>1</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>DF0A8CB62749640400E02B21</key>
+		<key>DF967F5C274A8B0A005AC4DE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>DFEABC12273698B400519C33</key>
+		<key>DF967F65274A8B0A005AC4DE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>DFF81E4A2737F288000C22C0</key>
+		<key>DF967FA7274A8BDD005AC4DE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
