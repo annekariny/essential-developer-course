@@ -22,7 +22,7 @@ class LocalFeedLoader {
             if error == nil {
                 store.insert(items, timestamp: self.currentDate(), completion: completion)
             } else {
-                
+                completion(error)
             }
         }
     }
@@ -97,6 +97,15 @@ class CacheFeedUseCaseTests: XCTestCase {
         
         XCTAssertEqual(store.receivedMessages, [.deleteCachedFeed, .insert(items, timestamp)])
     }
+    
+    func test_save_failsOnDeletionError() {
+        let (localFeedLoader, store) = makeSUT()
+        let deletionError = anyNSError
+        
+        expectSave(localFeedLoader, toCompleteWithError: deletionError) {
+            store.completeDeletion(with: deletionError)
+        }
+    }
 }
 
 private extension CacheFeedUseCaseTests {
@@ -122,5 +131,26 @@ private extension CacheFeedUseCaseTests {
         trackForMemoryLeaks(store, file: file, line: line)
         trackForMemoryLeaks(localFeedLoader, file: file, line: line)
         return (localFeedLoader, store)
+    }
+    
+    func expectSave(
+        _ sut: LocalFeedLoader,
+        toCompleteWithError expectedError: NSError?,
+        when action: () -> Void,
+        file: StaticString = #filePath,
+        line: UInt = #line
+    ) {
+        let exp = expectation(description: "Wait for save completion")
+        var receivedError: Error?
+        
+        sut.save([uniqueItem()]) { error in
+            receivedError = error
+            exp.fulfill()
+        }
+        
+        action()
+        wait(for: [exp], timeout: 1.0)
+        
+        XCTAssertEqual(receivedError as NSError?, expectedError, file: file, line: line)
     }
 }
