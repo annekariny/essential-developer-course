@@ -40,7 +40,7 @@ class CacheFeedUseCaseTests: XCTestCase {
         let (localFeedLoader, store) = makeSUT(currentDate: { timestamp })
         
         localFeedLoader.save(items) { _ in }
-        store.completeDeletionSuccessfuly()
+        store.completeDeletionSuccessfully()
         
         XCTAssertEqual(store.receivedMessages, [.deleteCachedFeed, .insert(items, timestamp)])
     }
@@ -59,7 +59,7 @@ class CacheFeedUseCaseTests: XCTestCase {
         let insertionError = anyNSError
         
         expectSave(localFeedLoader, toCompleteWithError: insertionError) {
-            store.completeDeletionSuccessfuly()
+            store.completeDeletionSuccessfully()
             store.completeInsertion(with: insertionError)
         }
     }
@@ -68,9 +68,36 @@ class CacheFeedUseCaseTests: XCTestCase {
         let (localFeedLoader, store) = makeSUT()
         
         expectSave(localFeedLoader, toCompleteWithError: nil) {
-            store.completeDeletionSuccessfuly()
+            store.completeDeletionSuccessfully()
             store.completeInsertionSuccessfully()
         }
+    }
+    
+    func test_save_doesNotDeliverDeletionErrorAfterSUTInstanceHasBeenDeallocated() {
+        let store = FeedStoreSpy()
+        var sut: LocalFeedLoader? = LocalFeedLoader(store: store, currentDate: Date.init)
+        
+        var receivedResults = [LocalFeedLoader.SaveResult]()
+        sut?.save([uniqueItem()]) { receivedResults.append($0) }
+        
+        sut = nil
+        store.completeDeletion(with: anyNSError)
+        
+        XCTAssertTrue(receivedResults.isEmpty)
+    }
+    
+    func test_save_doesNotDeliverInsertionErrorAfterSUTInstanceHasBeenDeallocated() {
+        let store = FeedStoreSpy()
+        var sut: LocalFeedLoader? = LocalFeedLoader(store: store, currentDate: Date.init)
+        
+        var receivedResults = [LocalFeedLoader.SaveResult]()
+        sut?.save([uniqueItem()]) { receivedResults.append($0) }
+        
+        store.completeDeletionSuccessfully()
+        sut = nil
+        store.completeInsertion(with: anyNSError)
+        
+        XCTAssertTrue(receivedResults.isEmpty)
     }
 }
 
@@ -145,7 +172,7 @@ private extension CacheFeedUseCaseTests {
             deletionCompletions[index](error)
         }
         
-        func completeDeletionSuccessfuly(at index: Int = 0) {
+        func completeDeletionSuccessfully(at index: Int = 0) {
             deletionCompletions[index](nil)
         }
         
