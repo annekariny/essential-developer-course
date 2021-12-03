@@ -51,7 +51,7 @@ class FeedStore {
         deletionCompletions[index](error)
     }
     
-    func completeSuccessfuly(at index: Int = 0) {
+    func completeDeletionSuccessfuly(at index: Int = 0) {
         deletionCompletions[index](nil)
     }
     
@@ -59,6 +59,14 @@ class FeedStore {
         insertionCompletions.append(completion)
         receivedMessages.append(.insert(items, timestamp))
     }
+    
+    func completeInsertion(with error: Error, at index: Int = 0) {
+         insertionCompletions[index](error)
+     }
+
+     func completeInsertionSuccessfully(at index: Int = 0) {
+         insertionCompletions[index](nil)
+     }
 }
 
 class CacheFeedUseCaseTests: XCTestCase {
@@ -93,7 +101,7 @@ class CacheFeedUseCaseTests: XCTestCase {
         let (localFeedLoader, store) = makeSUT(currentDate: { timestamp })
         
         localFeedLoader.save(items) { _ in }
-        store.completeSuccessfuly()
+        store.completeDeletionSuccessfuly()
         
         XCTAssertEqual(store.receivedMessages, [.deleteCachedFeed, .insert(items, timestamp)])
     }
@@ -104,6 +112,25 @@ class CacheFeedUseCaseTests: XCTestCase {
         
         expectSave(localFeedLoader, toCompleteWithError: deletionError) {
             store.completeDeletion(with: deletionError)
+        }
+    }
+    
+    func test_save_failsOnInsertionError() {
+        let (localFeedLoader, store) = makeSUT()
+        let insertionError = anyNSError
+        
+        expectSave(localFeedLoader, toCompleteWithError: insertionError) {
+            store.completeDeletionSuccessfuly()
+            store.completeInsertion(with: insertionError)
+        }
+    }
+    
+    func test_save_succeedsOnSuccessfulCacheInsertion() {
+        let (localFeedLoader, store) = makeSUT()
+        
+        expectSave(localFeedLoader, toCompleteWithError: nil) {
+            store.completeDeletionSuccessfuly()
+            store.completeInsertionSuccessfully()
         }
     }
 }
