@@ -8,7 +8,7 @@
 import XCTest
 import EssentialFeed
 
-class LocalFeedLoader {
+final class LocalFeedLoader {
     private let store: FeedStore
     private let currentDate: () -> Date
     
@@ -28,10 +28,15 @@ class LocalFeedLoader {
     }
 }
 
-class FeedStore {
+protocol FeedStore {
     typealias DeletionCompletion = (Error?) -> Void
     typealias InsertionCompletion = (Error?) -> Void
     
+    func deleteCacheFeed(completion: @escaping DeletionCompletion)
+    func insert(_ items: [FeedItem], timestamp: Date, completion: @escaping InsertionCompletion)
+}
+
+final class FeedStoreSpy: FeedStore {
     enum ReceivedMessage: Equatable {
         case deleteCachedFeed
         case insert([FeedItem], Date)
@@ -152,8 +157,11 @@ private extension CacheFeedUseCaseTests {
         currentDate: @escaping () -> Date = Date.init,
         file: StaticString = #filePath,
         line: UInt = #line
-    ) -> (localFeedLoader: LocalFeedLoader, store: FeedStore) {
-        let store = FeedStore()
+    ) -> (
+        localFeedLoader: LocalFeedLoader,
+        store: FeedStoreSpy
+    ) {
+        let store = FeedStoreSpy()
         let localFeedLoader = LocalFeedLoader(store: store, currentDate: currentDate)
         trackForMemoryLeaks(store, file: file, line: line)
         trackForMemoryLeaks(localFeedLoader, file: file, line: line)
