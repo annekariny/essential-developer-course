@@ -10,7 +10,7 @@
 		97319EAD27635BFC0084371A /* LoadFeedFromCacheUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97319EAC27635BFC0084371A /* LoadFeedFromCacheUseCaseTests.swift */; };
 		97319EB027635C160084371A /* FeedStoreSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97319EAF27635C160084371A /* FeedStoreSpy.swift */; };
 		9736696E278C4A45002FEB53 /* FeedStoreSpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9736696D278C4A45002FEB53 /* FeedStoreSpecs.swift */; };
-		97366970278C4A93002FEB53 /* XCTestCase+FailableFeedStoreSpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9736696F278C4A93002FEB53 /* XCTestCase+FailableFeedStoreSpecs.swift */; };
+		97366970278C4A93002FEB53 /* XCTestCase+FailableDeleteFeedStoreSpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9736696F278C4A93002FEB53 /* XCTestCase+FailableDeleteFeedStoreSpecs.swift */; };
 		97366972278C4ACD002FEB53 /* XCTestCase+FailableInsertFeedStoreSpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97366971278C4ACD002FEB53 /* XCTestCase+FailableInsertFeedStoreSpecs.swift */; };
 		97366974278C4B1A002FEB53 /* XCTestCase+FailableRetrieveFeedStoreSpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97366973278C4B1A002FEB53 /* XCTestCase+FailableRetrieveFeedStoreSpecs.swift */; };
 		97366976278C4B54002FEB53 /* XCTestCase+FeedStoreSpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97366975278C4B54002FEB53 /* XCTestCase+FeedStoreSpecs.swift */; };
@@ -79,7 +79,7 @@
 		97319EAC27635BFC0084371A /* LoadFeedFromCacheUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadFeedFromCacheUseCaseTests.swift; sourceTree = "<group>"; };
 		97319EAF27635C160084371A /* FeedStoreSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedStoreSpy.swift; sourceTree = "<group>"; };
 		9736696D278C4A45002FEB53 /* FeedStoreSpecs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedStoreSpecs.swift; sourceTree = "<group>"; };
-		9736696F278C4A93002FEB53 /* XCTestCase+FailableFeedStoreSpecs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+FailableFeedStoreSpecs.swift"; sourceTree = "<group>"; };
+		9736696F278C4A93002FEB53 /* XCTestCase+FailableDeleteFeedStoreSpecs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+FailableDeleteFeedStoreSpecs.swift"; sourceTree = "<group>"; };
 		97366971278C4ACD002FEB53 /* XCTestCase+FailableInsertFeedStoreSpecs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+FailableInsertFeedStoreSpecs.swift"; sourceTree = "<group>"; };
 		97366973278C4B1A002FEB53 /* XCTestCase+FailableRetrieveFeedStoreSpecs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+FailableRetrieveFeedStoreSpecs.swift"; sourceTree = "<group>"; };
 		97366975278C4B54002FEB53 /* XCTestCase+FeedStoreSpecs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+FeedStoreSpecs.swift"; sourceTree = "<group>"; };
@@ -168,7 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				9736696D278C4A45002FEB53 /* FeedStoreSpecs.swift */,
-				9736696F278C4A93002FEB53 /* XCTestCase+FailableFeedStoreSpecs.swift */,
+				9736696F278C4A93002FEB53 /* XCTestCase+FailableDeleteFeedStoreSpecs.swift */,
 				97366971278C4ACD002FEB53 /* XCTestCase+FailableInsertFeedStoreSpecs.swift */,
 				97366973278C4B1A002FEB53 /* XCTestCase+FailableRetrieveFeedStoreSpecs.swift */,
 				97366975278C4B54002FEB53 /* XCTestCase+FeedStoreSpecs.swift */,
@@ -549,7 +549,7 @@
 				9736696E278C4A45002FEB53 /* FeedStoreSpecs.swift in Sources */,
 				97E65330276A305600F0E6EF /* ValidadeFeedCacheUseCaseTests.swift in Sources */,
 				9768FAA7278F29A000D487D3 /* CoreDataFeedStoreTests.swift in Sources */,
-				97366970278C4A93002FEB53 /* XCTestCase+FailableFeedStoreSpecs.swift in Sources */,
+				97366970278C4A93002FEB53 /* XCTestCase+FailableDeleteFeedStoreSpecs.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
