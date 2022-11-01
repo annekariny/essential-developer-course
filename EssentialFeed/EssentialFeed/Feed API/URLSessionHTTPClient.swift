@@ -10,8 +10,8 @@ import Foundation
 public final class URLSessionHTTPClient: HTTPClient {
     private let session: URLSession
 
-    public init(sesstion: URLSession = .shared) {
-        self.session = sesstion
+    public init(session: URLSession = .shared) {
+        self.session = session
     }
 
     private struct UnexpectedValuesRepresentation: Error { }
