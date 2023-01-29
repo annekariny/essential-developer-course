@@ -6,13 +6,10 @@
 //
 
 import UIKit
-import EssentialFeed
 
 final class FeedRefreshViewController: NSObject {
     private(set) lazy var view = binded(UIRefreshControl())
     private let viewModel: FeedRefreshViewModel
-    
-    var onRefresh: (([FeedImage]) -> Void)?
 
     init(viewModel: FeedRefreshViewModel) {
         self.viewModel = viewModel
@@ -32,10 +29,6 @@ final class FeedRefreshViewController: NSObject {
                 self?.view.beginRefreshing()
             } else {
                 self?.view.endRefreshing()
-            }
-            
-            if let feed = viewModel.feed {
-                self?.onRefresh?(feed)
             }
         }
         return view

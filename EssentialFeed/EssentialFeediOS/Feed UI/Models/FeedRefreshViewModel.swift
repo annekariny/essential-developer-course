@@ -10,36 +10,13 @@ import EssentialFeed
 
 final class FeedRefreshViewModel {
     private let feedLoader: FeedLoader
+    
     var onChange: ((FeedRefreshViewModel) -> Void)?
+    var onFeedLoad: (([FeedImage]) -> Void)?
     
-    private enum State {
-        case pending
-        case loading
-        case loaded([FeedImage])
-        case failed
-    }
-    
-    private var state = State.pending {
+    private(set) var isLoading: Bool = false {
         didSet {
             onChange?(self)
-        }
-    }
-    
-    var isLoading: Bool {
-        switch state {
-        case .loading:
-            return true
-        default:
-            return false
-        }
-    }
-    
-    var feed: [FeedImage]? {
-        switch state {
-        case .loaded(let feed):
-            return feed
-        default:
-            return nil
         }
     }
 
@@ -48,13 +25,12 @@ final class FeedRefreshViewModel {
     }
     
     func loadFeed() {
-        state = .loading
+        isLoading = true
         feedLoader.load { [weak self] result in
             if let feed = try? result.get() {
-                self?.state = .loaded(feed)
-            } else {
-                self?.state = .failed
+                self?.onFeedLoad?(feed)
             }
+            self?.isLoading = false
         }
     }
 }
