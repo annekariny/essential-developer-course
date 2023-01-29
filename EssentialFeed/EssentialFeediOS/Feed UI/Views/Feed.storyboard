@@ -76,6 +76,9 @@ Location</string>
                                                             <buttonConfiguration key="configuration" style="plain" title="↻">
                                                                 <fontDescription key="titleFontDescription" type="system" pointSize="60"/>
                                                             </buttonConfiguration>
+                                                            <connections>
+                                                                <action selector="retryButtonTapped" destination="8am-cb-0TN" eventType="touchUpInside" id="m8H-al-Sja"/>
+                                                            </connections>
                                                         </button>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HrT-Tg-EMb">
                                                             <rect key="frame" x="0.0" y="0.0" width="374" height="374"/>
@@ -120,6 +123,14 @@ Location</string>
                                         <constraint firstItem="Z8I-In-X0e" firstAttribute="top" secondItem="a9W-Wj-Xez" secondAttribute="topMargin" priority="999" constant="6" id="yCn-GU-twu"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="descriptionLabel" destination="bZ4-iH-xGe" id="x29-RA-FUp"/>
+                                    <outlet property="feedImageContainer" destination="Lkq-R5-UAj" id="8zU-QS-bte"/>
+                                    <outlet property="feedImageRetryButton" destination="qBb-lO-uOV" id="j63-tx-ieK"/>
+                                    <outlet property="feedImageView" destination="HrT-Tg-EMb" id="3yn-QX-Xjv"/>
+                                    <outlet property="locationContainer" destination="Ssm-gd-cUE" id="jmP-Q9-2rl"/>
+                                    <outlet property="locationLabel" destination="DJx-T5-K6q" id="ALX-ij-If0"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
