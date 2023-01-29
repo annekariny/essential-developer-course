@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		97209043292D780F004784F8 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97209042292D780F004784F8 /* FeedViewController.swift */; };
-		97209045292D7834004784F8 /* FeedRefrestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97209044292D7834004784F8 /* FeedRefrestViewController.swift */; };
 		97209047292D786E004784F8 /* FeedImageDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97209046292D786E004784F8 /* FeedImageDataLoader.swift */; };
 		97209049292D7895004784F8 /* UIView+Shimmering.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97209048292D7895004784F8 /* UIView+Shimmering.swift */; };
 		9720904B292D78BD004784F8 /* FeedImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9720904A292D78BD004784F8 /* FeedImageCell.swift */; };
@@ -131,7 +130,6 @@
 
 /* Begin PBXFileReference section */
 		97209042292D780F004784F8 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
-		97209044292D7834004784F8 /* FeedRefrestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedRefrestViewController.swift; sourceTree = "<group>"; };
 		97209046292D786E004784F8 /* FeedImageDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageDataLoader.swift; sourceTree = "<group>"; };
 		97209048292D7895004784F8 /* UIView+Shimmering.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Shimmering.swift"; sourceTree = "<group>"; };
 		9720904A292D78BD004784F8 /* FeedImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageCell.swift; sourceTree = "<group>"; };
@@ -357,7 +355,6 @@
 			children = (
 				97C7B3B52910A62300C9A75B /* FeedImageCellController.swift */,
 				97209042292D780F004784F8 /* FeedViewController.swift */,
-				97209044292D7834004784F8 /* FeedRefrestViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -805,7 +802,6 @@
 			files = (
 				DF6F75142986F45D0008BAA3 /* FeedPresenter.swift in Sources */,
 				9720904B292D78BD004784F8 /* FeedImageCell.swift in Sources */,
-				97209045292D7834004784F8 /* FeedRefrestViewController.swift in Sources */,
 				97C7B3B42910A5F700C9A75B /* FeedUIComposer.swift in Sources */,
 				DF6F7516298709A70008BAA3 /* FeedImageViewModel.swift in Sources */,
 				DF6F7518298709C20008BAA3 /* FeedViewModel.swift in Sources */,
