@@ -32,8 +32,7 @@ final class FeedImageCellController {
         cell.locationContainer.isHidden = !viewModel.hasLocation
         cell.locationLabel.text = viewModel.location
         cell.descriptionLabel.text = viewModel.description
-        cell.feedImageView.image = nil
-        cell.feedImageRetryButton.isHidden = true
+        cell.onRetry = viewModel.loadImageData
         
         viewModel.onImageLoad = { [weak cell] image in
             cell?.feedImageView.image = image
