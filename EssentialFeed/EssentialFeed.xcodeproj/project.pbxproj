@@ -63,8 +63,8 @@
 		DF6F751C29870CA90008BAA3 /* Feed.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF6F751B29870CA90008BAA3 /* Feed.xcassets */; };
 		DF6F751E29871CD10008BAA3 /* UITableView+Dequeueing.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6F751D29871CD10008BAA3 /* UITableView+Dequeueing.swift */; };
 		DF6F752029871DD30008BAA3 /* UIImageView+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6F751F29871DD30008BAA3 /* UIImageView+Animation.swift */; };
-		DF6F75222987F78A0008BAA3 /* Feed.strings in Resources */ = {isa = PBXBuildFile; fileRef = DF6F75212987F78A0008BAA3 /* Feed.strings */; };
 		DF6F75242987FC770008BAA3 /* FeedViewControllerTests+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6F75232987FC760008BAA3 /* FeedViewControllerTests+Localization.swift */; };
+		DF6F75252987FDB30008BAA3 /* Feed.strings in Resources */ = {isa = PBXBuildFile; fileRef = DF6F75272987FDB30008BAA3 /* Feed.strings */; };
 		DF967F67274A8B0A005AC4DE /* EssentialFeed.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF967F5D274A8B0A005AC4DE /* EssentialFeed.framework */; };
 		DF967F84274A8B4E005AC4DE /* FeedLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF967F82274A8B4E005AC4DE /* FeedLoader.swift */; };
 		DF967F85274A8B4E005AC4DE /* FeedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF967F83274A8B4E005AC4DE /* FeedItem.swift */; };
@@ -184,8 +184,10 @@
 		DF6F751B29870CA90008BAA3 /* Feed.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Feed.xcassets; sourceTree = "<group>"; };
 		DF6F751D29871CD10008BAA3 /* UITableView+Dequeueing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Dequeueing.swift"; sourceTree = "<group>"; };
 		DF6F751F29871DD30008BAA3 /* UIImageView+Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Animation.swift"; sourceTree = "<group>"; };
-		DF6F75212987F78A0008BAA3 /* Feed.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Feed.strings; sourceTree = "<group>"; };
 		DF6F75232987FC760008BAA3 /* FeedViewControllerTests+Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FeedViewControllerTests+Localization.swift"; sourceTree = "<group>"; };
+		DF6F75262987FDB30008BAA3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Feed.strings; sourceTree = "<group>"; };
+		DF6F75282987FDD40008BAA3 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Feed.strings"; sourceTree = "<group>"; };
+		DF6F75292987FDFC0008BAA3 /* el */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = el; path = el.lproj/Feed.strings; sourceTree = "<group>"; };
 		DF967F5D274A8B0A005AC4DE /* EssentialFeed.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EssentialFeed.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF967F61274A8B0A005AC4DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DF967F66274A8B0A005AC4DE /* EssentialFeedTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EssentialFeedTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -452,7 +454,7 @@
 				DF6F7515298709A70008BAA3 /* FeedImageViewModel.swift */,
 				DF6F75132986F45D0008BAA3 /* FeedPresenter.swift */,
 				DF6F7517298709C20008BAA3 /* FeedViewModel.swift */,
-				DF6F75212987F78A0008BAA3 /* Feed.strings */,
+				DF6F75272987FDB30008BAA3 /* Feed.strings */,
 			);
 			path = "Feed Presentation";
 			sourceTree = "<group>";
@@ -725,6 +727,8 @@
 			knownRegions = (
 				en,
 				Base,
+				"pt-BR",
+				el,
 			);
 			mainGroup = DF967F53274A8B0A005AC4DE;
 			productRefGroup = DF967F5E274A8B0A005AC4DE /* Products */;
@@ -755,7 +759,7 @@
 			files = (
 				DF6F751A29870C010008BAA3 /* Feed.storyboard in Resources */,
 				DF6F751C29870CA90008BAA3 /* Feed.xcassets in Resources */,
-				DF6F75222987F78A0008BAA3 /* Feed.strings in Resources */,
+				DF6F75252987FDB30008BAA3 /* Feed.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -924,6 +928,19 @@
 			targetProxy = DF967FAE274A8BDD005AC4DE /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DF6F75272987FDB30008BAA3 /* Feed.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DF6F75262987FDB30008BAA3 /* en */,
+				DF6F75282987FDD40008BAA3 /* pt-BR */,
+				DF6F75292987FDFC0008BAA3 /* el */,
+			);
+			name = Feed.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		9768FAB4278F370B00D487D3 /* Debug */ = {
@@ -1096,6 +1113,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -1162,6 +1180,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
